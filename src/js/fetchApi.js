@@ -7,38 +7,13 @@ export default function pixiApi(search, curPage, callBack){
     fetch(url).then(j=>j.json()).then(data=>callBack(data)).catch(e=>console.log('WE SEE ERROR: ', e));
 }
 
-
-
-// const REQUEST_URL = 'https://pixabay.com/api/';
-// const API_KEY = '16131668-a6b5f889764d48a111b29e31c';
-// const LCID = 'LCID';
-// const localData = localStorage.getItem(LCID);
-// let localStoregeData = {};
-
-// export default function getImageList(
-//   searchText,
-//   currentPage,
-//   arrLength,
-//   addImageData,
-// ) {
-//   if (localData) {
-//     localStoregeData = JSON.parse(localData);
-//   }
-//   if (localStoregeData[searchText + currentPage]) {
-//     addImageData(localStoregeData[searchText + currentPage]);
-//     return;
-//   }
-//   fetch(
-//     `${REQUEST_URL}?image_type=photo&orientation=horizontal&q=${searchText}&page=${currentPage}&per_page=${arrLength}&key=${API_KEY}`,
-//   )
-//     .then(data => data.json())
-//     .then(imageData => {
-//       addImageData(imageData.hits);
-//       localStoregeData[searchText + currentPage] = imageData.hits;
-//       localStorage.setItem(LCID, JSON.stringify(localStoregeData));
-//     }).catch(e=>console.log('WE SEE ERROR: ', e));
-// }
-
+//  ************ из вебинара Репеты***************
+// при выполнении такого кода у меня выскакивала ошибка связанная с кросс-доменом.
+// KEY"Access to fetch at 'https://pixabay.com/api/?q=dog&page=1' from origin 'http://127.0.0.1:5502' 
+// has been blocked by CORS policy: Response to preflight request doesn''t pass access control check: 
+// No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+// If an opaque response serves your needs, 
+// set the request''s mode to 'no-cors' to fetch the resource with CORS disabled." 
 
 // const baseUrl = 'https://pixabay.com/api/';
 
